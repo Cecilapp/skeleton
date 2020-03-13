@@ -1,0 +1,2 @@
+# skeleton
+`cecil new:site`
