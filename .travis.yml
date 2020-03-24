@@ -9,3 +9,11 @@ install:
 script:
   - php cecil.phar new:site
   - php cecil.phar build -v
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GH_TOKEN
+  local_dir: _site
+  keep_history: true
+  on:
+    branch: master
