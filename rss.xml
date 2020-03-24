@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Cecil</title>
+    <description><![CDATA[Cecil is a CLI application that merges plain text files (written in Markdown), images and Twig templates to generate a static website.]]></description>
+    <lastBuildDate>2020-03-24T01:47:19+01:00</lastBuildDate>
+    <link>https://cecil.local/</link>
+    <item>
+      <guid>https://cecil.local/another-page/</guid>
+      <title>Another page</title>
+      <description><![CDATA[<h2>Welcome to another page</h2>
+<p><em>yay</em></p>
+<p><a href="../">back</a></p>]]></description>
+      <pubDate>2020-03-24T01:47:19+01:00</pubDate>
+      <link>https://cecil.local/another-page/</link>
+    </item>
+  </channel>
+</rss>
