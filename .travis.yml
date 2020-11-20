@@ -11,8 +11,8 @@ script:
   - php cecil.phar build -v
 deploy:
   provider: pages
-  skip_cleanup: true
-  github_token: $GH_TOKEN
+  edge: true
+  token: $GH_TOKEN
   local_dir: _site
   keep_history: true
   on:
