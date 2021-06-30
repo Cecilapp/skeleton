@@ -5,7 +5,7 @@
   <subtitle><![CDATA[Cecil is a CLI application that merges plain text files (written in Markdown), images and Twig templates to generate a static website.]]></subtitle>
   <link href="https://cecilapp.github.io/skeleton/atom.xml" rel="self" type="application/atom+xml" />
   <link href="https://cecilapp.github.io/skeleton/" rel="alternate" type="text/html" />
-  <updated>2021-06-24T00:21:37+02:00</updated>
+  <updated>2021-07-01T00:22:22+02:00</updated>
   <author>
     <name>Arnaud Ligny</name>
     <uri>https://arnaudligny.fr</uri>
@@ -14,12 +14,12 @@
     <id>https://cecilapp.github.io/skeleton/another-page/</id>
     <title>Another page</title>
     <content type="html">
-      <![CDATA[<h2>Welcome to another page</h2>
+      <![CDATA[<h2 id="welcome-to-another-page">Welcome to another page</h2>
 <p><em>yay</em></p>
 <p><a href="../">back</a></p>]]>
     </content>
     <link href="https://cecilapp.github.io/skeleton/another-page/" rel="alternate" type="text/html" />
-    <published>2021-06-24T00:21:37+02:00</published>
-    <updated>2021-06-24T00:21:37+02:00</updated>
+    <published>2021-07-01T00:22:22+02:00</published>
+    <updated>2021-07-01T00:22:22+02:00</updated>
   </entry>
 </feed>
