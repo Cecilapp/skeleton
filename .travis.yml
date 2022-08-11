@@ -7,13 +7,17 @@ branches:
   only:
     - master
 
+# download Cecil
 install:
-  - curl -sSOL https://cecil.app/cecil.phar && php cecil.phar --version
+  - curl -sSOL https://cecil.app/cecil.phar
+  - php cecil.phar --version
 
+# create and build a new website without interaction
 script:
-  - php cecil.phar new:site -n
-  - php cecil.phar build -v
+  - php cecil.phar new:site --no-interaction
+  - php cecil.phar build --verbose
 
+# deploy to GitHub Pages
 deploy:
   provider: pages
   edge: true
