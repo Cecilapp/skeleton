@@ -28,6 +28,9 @@ jobs:
       - name: Build with Cecil
         run: |
           php cecil.phar build --verbose
+        env:
+          CECIL_BASEURL: https://cecilapp.github.io/skeleton/
+          CECIL_CANONICALURL: true
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
