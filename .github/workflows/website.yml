@@ -17,7 +17,7 @@ jobs:
           php cecil.phar --version
       - name: Create a new site
         run: |
-          php cecil.phar new:site --force --no-interaction
+          php cecil.phar new:site --demo --force --no-interaction
       - name: Build with Cecil
         run: |
           php cecil.phar build --verbose
