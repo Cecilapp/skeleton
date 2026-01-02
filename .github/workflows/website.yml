@@ -1,5 +1,8 @@
 name: Build & deploy website
 
+env:
+  PHP_VERSION: 8.2
+
 on:
   push:
     branches: [main, master]
@@ -11,6 +14,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Install PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ env.PHP_VERSION }}
+          extensions: :psr, mbstring, intl, gettext, fileinfo, gd, :redis, :relay
+          coverage: none
       - name: Download Cecil
         run: |
           curl -sSOL https://cecil.app/cecil.phar
@@ -23,9 +32,9 @@ jobs:
           php cecil.phar build --verbose
         env:
           CECIL_BASEURL: https://cecilapp.github.io/skeleton/
-          CECIL_CANONICALURL: true
+          #CECIL_CANONICALURL: true
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
 
   deploy:
     needs: build
