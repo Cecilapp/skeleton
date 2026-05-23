@@ -12,14 +12,24 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: pre-installed
+          extensions: mbstring, fileinfo, gd, imagick, intl, gettext, :redis
       - name: Download Cecil
         run: |
           curl -sSOL https://cecil.app/cecil.phar
       - name: Create a new site
         run: |
           php cecil.phar new:site --demo --force --no-interaction
-      - name: Build site
-        uses: Cecilapp/Cecil-Action@v4
+      - name: Setup GitHub Pages
+        id: pages
+        uses: actions/configure-pages@v6
+      - name: Building site with Cecil
+        shell: bash
+        run: |
+          php cecil.phar build -v --baseurl="${{ steps.pages.outputs.base_url }}/"
   deploy:
     needs: build
     permissions:
