@@ -12,6 +12,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Download Cecil
+        run: |
+          curl -sSOL https://cecil.app/cecil.phar
       - name: Create a new site
         run: |
           php cecil.phar new:site --demo --force --no-interaction
