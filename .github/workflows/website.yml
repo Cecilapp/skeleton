@@ -20,7 +20,7 @@ jobs:
       - name: Download Cecil
         run: |
           curl -sSOL https://cecil.app/cecil.phar
-      - name: Create a new site
+      - name: Create a new Cecil site
         run: |
           php cecil.phar new:site --demo --force --no-interaction
       - name: Setup GitHub Pages
@@ -30,6 +30,10 @@ jobs:
         shell: bash
         run: |
           php cecil.phar build -v --baseurl="${{ steps.pages.outputs.base_url }}/"
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: ./_site
   deploy:
     needs: build
     permissions:
